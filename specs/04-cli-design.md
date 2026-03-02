@@ -5,16 +5,18 @@
 바탕으로 구현되어야 합니다.
 
 ## 1. 개요
+
 CLI는 헤드리스(Headless) 환경, 스크립트 자동화, 또는 터미널(콘솔)을 선호하는 사용자를 위해
 제공됩니다. 백그라운드에서 실행 중인 Core Process 및 Service Process와 IPC를 통해 통신하여
 제어 명령을 전달하고 상태를 확인합니다.
 
 ## 2. 기본 명령어 구조
-명령어는 `mudfish-dns` (또는 `mudfish-dns-cli`) 바이너리를 통해 실행되며, 서브커맨드
+
+명령어는 `mudfish-dns-cli` 바이너리를 통해 실행되며, 서브커맨드
 (Subcommands) 방식을 채택합니다. 일반적으로 `clap`과 같은 라이브러리를 사용하여 구성합니다.
 
 ```bash
-mudfish-dns [OPTIONS] <SUBCOMMAND>
+mudfish-dns-cli [OPTIONS] <SUBCOMMAND>
 ```
 
 ## 3. 주요 명령어 (Subcommands)
