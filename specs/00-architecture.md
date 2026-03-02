@@ -23,7 +23,9 @@ IPC(Inter-Process Communication)나 로컬 소켓 등을 통해 서로 안전하
 
 * DNS Packet Redirection
 
-  시스템에서 발생하거나 들어오는 DNS 패킷을 캡처하고 리다이렉션하는 역할을 합니다.
+  시스템에서 발생하거나 들어오는 DNS 패킷을 캡처하고 리다이렉션하는 역할을 합니다.  즉,
+  "시스템 -> Mudfish DNS" 로 패킷이 전달되는 입구 역할을 합니다.
+
   지원하는 각 운영체제의 특성에 맞게 다음과 같은 다양한 방식을 지원해야 합니다.
 
   * 범용 (Local Server): Listen on 127.0.0.1:53
