@@ -100,6 +100,7 @@ Process와 통신하여 제어 명령을 내립니다.
   * Start / Stop 버튼
   * 실시간 통계 및 쿼리 로그 대시보드 표시
   * 캐시 초기화(Purge) 인터페이스
+
 * 기타 기능
   * 창을 닫을 때, 시스템 트레이(상태 표시줄)로 최소화
   * OS별 부팅 시 자동 실행 연동 (Windows, macOS, Linux 등)
@@ -108,12 +109,13 @@ Process와 통신하여 제어 명령을 내립니다.
 ### Service Process (Daemon)
 
 UI Process 로부터 전달되는 명령어를 처리하고 높은 권한이 필요한 작업을 백그라운드에서 수행합니다.
-각 OS의 백그라운드 서비스 시스템(Windows Service, macOS launchd, Linux systemd 등)에
-등록되어 동작합니다.
+각 OS의 백그라운드 서비스 시스템(Windows Service, Linux systemd 등)에 등록되어 동작합니다.
+(단, macOS는 App Store로만 배포됩니다.)
 
 * 주요 역할
   * Core Process 의 Start / Stop 및 비정상 종료 시 재시작(Watchdog) 처리
   * 시스템 DNS 설정 변경 및 가상 네트워크 인터페이스(Wintun 등) 생성 시 필요한 관리자 권한 대행
+
 * 명령어 통신 (IPC)
   * UI Process 와 로컬 소켓 또는 Named Pipe 등을 통한 보안 통신
   * 지원 명령어: Start / Stop / Status / Restart
