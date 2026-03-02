@@ -35,6 +35,7 @@ As a standard Rust workspace, you can use Cargo for common development tasks:
 *(Note: Depending on the OS and the traffic interception method used, running the Core and Service processes may require elevated/administrator privileges.)*
 
 ## Development Conventions
+- **Specifications:** 항상 `./specs/` 디렉토리 아래에 있는 `*.md` 파일들의 내용이 Mudfish DNS의 공식 명세(Specification)이므로, 구현 시 반드시 해당 내용을 참고하고 반영해야 합니다.
 - **Language:** The project is developed in **Rust**.
 - **Coding Style:** As per user preference, keep the code free of unnecessary comments.
 - **Modularity:** Adhere to the strict separation of concerns outlined in the architecture. Use `crates/common` for shared logic.
