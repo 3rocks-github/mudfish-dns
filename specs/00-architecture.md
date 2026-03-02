@@ -117,7 +117,3 @@ UI Process 로부터 전달되는 명령어를 처리하고 높은 권한이 필
 * 명령어 통신 (IPC)
   * UI Process 와 로컬 소켓 또는 Named Pipe 등을 통한 보안 통신
   * 지원 명령어: Start / Stop / Status / Restart
-
-## 구현
-
-미꾸라지 DNS 는 Rust 언어를 기준으로 작성되었습니다.
