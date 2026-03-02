@@ -66,6 +66,9 @@ IPC(Inter-Process Communication)나 로컬 소켓 등을 통해 서로 안전하
   사용자가 확인하고 관리할 수 있어야 합니다.
 
   * Caching
+    * 기본적으로 In-memory 캐시를 사용
+    * Redis, Memcached 와 같은 외부 저장소(External storage)를 사용할 수
+      있도록 설정 지원
     * Purging (캐시 초기화) 지원
   * Split DNS (로컬 우회 라우팅)
     * `*.local`, `192.168.x.x`, `.corp` 등 사내망이나 로컬 네트워크 쿼리가
@@ -85,12 +88,17 @@ IPC(Inter-Process Communication)나 로컬 소켓 등을 통해 서로 안전하
   Plugin 모델을 도입하여 사용자가 직접 모듈(mod)을 만들어 사용할 수 있도록 하는 부분입니다.
   아래는 예시이며, Core plugin과 Custom plugin으로 나뉘어질 수 있습니다.
 
-  * Custom Rule
+  Core plugin 은 Mudfish DNS 내부에서 기본적으로 제공하는 기능을 담당하는 플러그인인 반면,
+  Custom plugin 은 사용자가 직접 작성하거나 제 3자가 작성한 모듈을 뜻합니다.
+
+  * ACL
     * Include domains
     * Exclude domains (사용자 지정 화이트리스트/블랙리스트)
+
   * Official filtering
     * 광고 및 트래커 차단
     * Domain Category Service (유해 사이트, 악성코드 배포지 차단 등)
+
   * DNS Leaking Prevention (DNS 유출 방지 기능)
 
 ### UI Process
