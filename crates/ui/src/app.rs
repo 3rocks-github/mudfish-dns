@@ -4,6 +4,7 @@
 
 pub struct App {
     is_running: bool,
+    #[allow(dead_code)]
     theme: Theme,
 }
 

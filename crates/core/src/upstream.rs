@@ -13,6 +13,7 @@ pub enum UpstreamProtocol {
 }
 
 pub struct UpstreamClient {
+    #[allow(dead_code)]
     protocol: UpstreamProtocol,
 }
 
@@ -21,7 +22,7 @@ impl UpstreamClient {
         Self { protocol }
     }
 
-    pub fn forward(&self, packet: &[u8]) {
+    pub fn forward(&self, _packet: &[u8]) {
         // Forward the packet based on the protocol
     }
 }

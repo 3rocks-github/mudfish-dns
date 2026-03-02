@@ -2,6 +2,7 @@
 /// Handles Caching (Purging), Split DNS (bypassing local domains: *.local, 192.168.x.x, .corp to OS default resolver).
 
 pub struct Router {
+    #[allow(dead_code)]
     cache: Cache,
 }
 
@@ -20,7 +21,7 @@ impl Router {
         }
     }
 
-    fn is_split_dns(&self, domain: &str) -> bool {
+    fn is_split_dns(&self, _domain: &str) -> bool {
         // Match against *.local, 192.168.x.x, .corp, etc.
         false
     }

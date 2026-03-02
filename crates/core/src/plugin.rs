@@ -27,7 +27,7 @@ impl PluginManager {
         self.plugins.push(plugin);
     }
 
-    pub fn evaluate(&self, domain: &str) -> PluginAction {
+    pub fn evaluate(&self, _domain: &str) -> PluginAction {
         // Iterate and apply plugin rules
         PluginAction::Allow
     }

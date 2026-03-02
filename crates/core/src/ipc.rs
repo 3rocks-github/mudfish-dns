@@ -12,7 +12,7 @@ impl IpcServer {
         // Listen for IPC messages from UI/Service
     }
 
-    pub fn handle_message(&self, msg: mudfish_dns_common::ipc::Message) {
+    pub fn handle_message(&self, _msg: mudfish_dns_common::ipc::Message) {
         // Execute Start/Stop, Status, Purge Cache commands
     }
 }

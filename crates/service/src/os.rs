@@ -8,7 +8,7 @@ impl NetworkManager {
         Self
     }
 
-    pub fn configure_system_dns(&self, server: &str) {
+    pub fn configure_system_dns(&self, _server: &str) {
         // Change default OS resolver
     }
 
