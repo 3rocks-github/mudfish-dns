@@ -47,3 +47,7 @@ mudfish-dns-cli [OPTIONS] <SUBCOMMAND>
   메시지를 사용하여 데몬(Service/Core)과 통신합니다.
 * **실행 권한:** 일반 사용자 권한으로 실행되며, 관리자 권한이 필요한 제어는 Service 프로세스에
   위임합니다.
+* **플랫폼 제약:** CLI 도구는 백그라운드 Service 데몬이 상주하는
+  데스크톱 환경(Windows, Linux)을 주 타겟으로 합니다. 데몬이 없는 macOS 환경에서
+  CLI를 사용할 경우, UI 앱(단일 번들)이 실행 중이고 IPC 소켓이 활성화된 상태여야만
+  Core 프로세스와 통신이 가능합니다.

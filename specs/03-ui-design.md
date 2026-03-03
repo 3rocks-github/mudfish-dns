@@ -62,11 +62,12 @@ Process와 IPC를 통해 안전하게 통신하여 상태를 동기화하고 명
   * 사용할 보안 프로토콜 선택 (UDP, TCP, DoH, DoT, DoQ, ODoH).
   * 사전 정의된 제공자 목록(Cloudflare, Google, Quad9 등)에서 선택하거나 사용자 지정
     서버(Custom Server) 추가 인터페이스 제공.
-* **속도 및 라우팅 (Routing & Speed):**
-  * **캐시 관리:** DNS 캐시 활성화 여부 토글, **캐시 초기화(Purge Cache)** 버튼.
-  * **Split DNS (분할 라우팅):** `.local`, `192.168.x.x` 등 로컬 네트워크나 사내망
-    도메인이 외부로 유출되지 않고 OS 기본 리졸버를 타도록 우회 규칙(Bypass Rules)을
-    설정하는 인터페이스.
+* **속도 및 캐시 관리 (Speed & Caching):**
+  * DNS 캐시 활성화 여부 토글.
+  * **캐시 초기화(Purge Cache)** 버튼 제공.
+* **라우팅 (Routing):**
+  * **조건부 포워딩 (Conditional Forwarding):** 특정 도메인(예: 사내망)을 지정된 내부 DNS 서버로 라우팅하는 규칙 설정.
+  * **OS 리졸버 우회 (Bypass):** `.local`, `192.168.x.x` 등 로컬 도메인이 Mudfish DNS를 거치지 않고 OS 기본 리졸버를 타도록 예외 처리하는 인터페이스.
 * **플러그인 및 필터링 (Plugins & Filtering):**
   * 광고 및 트래커 차단 모듈 On/Off.
   * 유해 사이트 차단 모듈 On/Off.

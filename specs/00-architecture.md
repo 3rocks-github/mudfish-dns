@@ -64,19 +64,26 @@
   * Proxy 지원 기능 (SOCKS5, HTTP Proxy 경유 지원)
   * Captive Portal 탐지 및 예외 처리 지원
 
-* 속도 및 라우팅
+* 캐시 및 속도 (Caching & Speed)
 
-  DNS 요청의 처리 속도를 높이고 효율적인 라우팅을 수행합니다. 설정 상태는 UI를 통해 명확하게
-  사용자가 확인하고 관리할 수 있어야 합니다.
+  DNS 요청의 처리 속도를 높이고 업스트림 서버의 부하를 줄입니다.
 
   * Caching
     * 기본적으로 In-memory 캐시를 사용
     * Redis, Memcached 와 같은 외부 저장소(External storage)를 사용할 수
       있도록 설정 지원
     * Purging (캐시 초기화) 지원
-  * Split DNS (로컬 우회 라우팅)
-    * `*.local`, `192.168.x.x`, `.corp` 등 사내망이나 로컬 네트워크 쿼리가
-      외부 Upstream으로 유출되지 않도록 OS 기본 리졸버로 우회 처리
+
+* 라우팅 규칙 (Routing Rules)
+
+  네트워크 환경에 맞는 효율적인 쿼리 분배 및 우회 처리를 수행합니다. 설정 상태는 UI를 통해 명확하게
+  사용자가 확인하고 관리할 수 있어야 합니다.
+
+  * 조건부 포워딩 및 라우팅 우회
+    * 조건부 포워딩 (Conditional Forwarding): 사내망 등 특정 도메인 쿼리를 지정된
+      내부 DNS 서버로 포워딩.
+    * OS 리졸버 우회 (Bypass): `*.local`, `192.168.x.x`, `.corp` 등 로컬 네트워크
+      쿼리가 미꾸라지 DNS 캡처를 우회하고 OS 기본 리졸버를 타도록 예외 처리.
 
 * 로깅 및 통계 (Logging & Analytics)
 
