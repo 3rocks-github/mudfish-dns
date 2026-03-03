@@ -117,6 +117,10 @@
 
   * DNS Leaking Prevention (DNS 유출 방지 기능)
 
+  * Bogus NXDOMAIN / Bogus IP 필터링
+    * ISP나 검열 기관이 반환하는 가짜(오염된) IP 주소 또는 NXDOMAIN 응답을 감지하고 무시하여 DNS 오염(DNS Pollution)을 우회하는 기능.
+    * (상세 스펙: `07-plugin-bogus.md` 참조)
+
 ### UI Process
 
 사용자 경험(UX)을 직접적으로 담당하는 프로세스로, 내부적으로 Core Process 혹은 Service
