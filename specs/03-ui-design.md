@@ -90,9 +90,18 @@ Process와 IPC를 통해 안전하게 통신하여 상태를 동기화하고 명
   * 대시보드 열기 (Open Dashboard)
   * 앱 완전 종료 (Quit Mudfish DNS)
 
-## 5. 권한 및 플랫폼별 안내 (Permissions & OS Specifics)
-* 데스크톱(Windows, macOS, Linux) 환경에서 UI 앱은 일반 사용자 권한으로 실행됩니다.
-* Core/Service 프로세스 제어를 위해 관리자 권한이 필요한 이벤트(예: 최초 설치 시 시스템
-  데몬 등록, WFP/NetworkExtension 활성화 등)가 발생할 경우, UI는 OS가 제공하는 권한
-  상승 다이얼로그(UAC, Polkit, macOS 권한 프롬프트)를 트리거하고 진행 상황을 사용자에게
-  명확한 메시지로 안내해야 합니다.
+## 5. 권한 및 플랫폼별 통신 흐름 안내 (Permissions & OS Specifics)
+
+* **Windows / Linux:** UI 앱은 일반 사용자 권한으로 실행됩니다. Core/Service 프로세스
+  제어를 위해 관리자 권한이 필요한 이벤트(예: 최초 설치 시 시스템 데몬 등록, WFP 활성화 등)가
+  발생할 경우, UI는 Service 프로세스와 IPC로 통신하며, OS가 제공하는 권한 상승
+  다이얼로그(UAC, Polkit 등)를 트리거하여 진행 상황을 사용자에게 명확한 메시지로 안내해야
+  합니다.
+* **macOS:** App Store 샌드박스 정책에 따라 독립된 Service 데몬을 사용하지 않습니다.
+  UI 앱(단일 번들) 내에서 공식 `SystemExtension` API를 직접 호출하여
+  NetworkExtension을 활성화합니다. 권한 제어는 macOS가 자체적으로 사용자에게 팝업을 띄워
+  대행하므로, UI는 OS API의 응답 상태에 따라 사용자에게 적절한 안내
+  (예: "환경설정에서 시스템 확장 프로그램 권한을 허용해 주세요")를 제공해야 합니다.
+* **모바일 (iOS / Android):** 모바일 UI는 OS의 프레임워크(NetworkExtension,
+  VpnService)를 직접 호출하여 트래픽 캡처 권한을 획득하고, 내장된 Core 라이브러리를
+  제어합니다.

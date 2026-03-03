@@ -8,8 +8,12 @@
 
 ## 기본적인 요소
 
-미꾸라지 DNS 는 크게 다음과 같이 세 가지 프로세스로 구성되어 있으며, 각 프로세스는
-IPC(Inter-Process Communication)나 로컬 소켓 등을 통해 서로 안전하게 통신합니다.
+미꾸라지 DNS는 기본적으로 데스크톱(Windows, Linux) 환경에서 다음과 같이 세 가지 독립적인
+프로세스로 구성되며, 각 프로세스는 IPC(Inter-Process Communication)나 로컬 소켓 등을 통해
+서로 안전하게 통신합니다.
+단, 운영체제의 샌드박스 정책 및 모바일 환경의 특성(macOS, iOS, Android)에 따라 이 아키텍처는
+단일 앱 번들 내장 또는 공유 라이브러리(Library) 형태로 변형되어 적용됩니다
+(자세한 사항은 `01-packaging.md` 참조).
 
 * Core Process
   * DNS 요청을 처리하고 라우팅하는 핵심 역할을 수행합니다.
@@ -120,7 +124,8 @@ Process와 통신하여 제어 명령을 내립니다.
 
 UI Process 로부터 전달되는 명령어를 처리하고 높은 권한이 필요한 작업을 백그라운드에서 수행합니다.
 각 OS의 백그라운드 서비스 시스템(Windows Service, Linux systemd 등)에 등록되어 동작합니다.
-(단, macOS는 App Store로만 배포됩니다.)
+(단, macOS와 모바일 환경(iOS, Android)에서는 OS의 자체 프레임워크(NetworkExtension,
+VpnService)가 Service의 역할을 대체하므로 독립된 데몬 프로세스를 사용하지 않습니다.)
 
 * 주요 역할
   * Core Process 의 Start / Stop 및 비정상 종료 시 재시작(Watchdog) 처리
