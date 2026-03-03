@@ -71,7 +71,8 @@ Process와 IPC를 통해 안전하게 통신하여 상태를 동기화하고 명
 * **플러그인 및 필터링 (Plugins & Filtering):**
   * 광고 및 트래커 차단 모듈 On/Off.
   * 유해 사이트 차단 모듈 On/Off.
-  * 사용자 지정 화이트리스트(Include domains) / 블랙리스트(Exclude domains) 관리 화면.
+  * 사용자 지정 화이트리스트(Include domains) / 블랙리스트(Exclude domains) 관리 화면 (Domain Filtering).
+  * **ACL (접근 제어 목록):** 특정 IP 대역이나 쿼리 타입에 대해 허용/차단/무시를 설정할 수 있는 고급 규칙 구성 화면.
 * **일반 및 시스템 (General):**
   * OS 부팅 시 자동 시작 (Start on boot) 설정.
   * 창을 닫을 때 시스템 트레이로 최소화 (Minimize to tray on close) 옵션.

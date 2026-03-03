@@ -23,15 +23,15 @@ mudfish-dns-cli [OPTIONS] <SUBCOMMAND>
 
 ### 3.1. 상태 제어 및 확인
 
-* `start`: 미꾸라지 DNS 보호를 시작합니다. (Service를 통해 Core 프로세스 구동)
-* `stop`: 미꾸라지 DNS 보호를 중지합니다.
-* `restart`: 미꾸라지 DNS 보호를 재시작합니다.
+* `start`: 미꾸라지 DNS 를 시작합니다. (Service를 통해 Core 프로세스 구동)
+* `stop`: 미꾸라지 DNS 를 중지합니다.
+* `restart`: 미꾸라지 DNS 를 재시작합니다.
 * `status`: 현재 실행 여부(보호 중/중지됨), 사용 중인 업스트림 서버, 기본 통계를 터미널에
   출력합니다.
 
 ### 3.2. 관리 및 유지보수
 
-* `purge-cache`: 코어 내부의 DNS 캐시를 즉시 초기화(Purge)합니다.
+* `cache-purge`: 코어 내부의 DNS 캐시를 즉시 초기화(Purge)합니다.
 * `logs`: 실시간으로 처리되는 DNS 쿼리 로그 및 차단 로그를 터미널에 출력합니다.
   (Ctrl+C로 종료 전까지 계속 출력)
 

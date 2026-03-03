@@ -102,9 +102,14 @@
   Core plugin 은 Mudfish DNS 내부에서 기본적으로 제공하는 기능을 담당하는 플러그인인 반면,
   Custom plugin 은 사용자가 직접 작성하거나 제 3자가 작성한 모듈을 뜻합니다.
 
-  * ACL
-    * Include domains
-    * Exclude domains (사용자 지정 화이트리스트/블랙리스트)
+  다음의 플러그인은 예시로 생각할 수 있는 타입들이다.
+
+  * ACL (Access Control List)
+    * 클라이언트 IP(서브넷) 및 DNS 쿼리 타입을 기반으로 쿼리를 허용(allow), 차단(block), 무시(drop)하는 접근 제어 기능입니다.
+    * (상세 스펙: `06-plugin-acl.md` 참조)
+
+  * Custom Domain Filtering
+    * 사용자 지정 화이트리스트 (Include domains) 및 블랙리스트 (Exclude domains) 처리
 
   * Official filtering
     * 광고 및 트래커 차단
